@@ -1,4 +1,4 @@
-#include "/usr/include/bits/stdio.h"
+#include "/usr/lib/gcc/x86_64-pc-linux-gnu/8.3.0/include/g++-v8/tr1/stdio.h"
 #include <stdlib.h>
 #include <unistd.h>
 #include <errno.h>
