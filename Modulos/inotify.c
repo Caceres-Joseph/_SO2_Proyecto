@@ -1,4 +1,4 @@
-#include "/usr/src/linux-4.19.72-gentoo/tools/perf/include/bpf/stdio.h"
+#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <errno.h>
