@@ -1,20 +1,14 @@
 
-obj-m	+= inotify.o
+obj-m    := inotify.o
 
-#KERNELDIR ?= ~/armsystem/kernel/linux-4.9.30/
-KERNELDIR ?= /lib/modules/$(shell uname -r)/build
-PWD       := $(shell pwd)
-
-all: default
+KDIR    := /lib/modules/$(shell uname -r)/build
+PWD    := $(shell pwd)
 
 default:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
-
+    $(MAKE) -C $(KDIR) SUBDIRS=$(PWD) modules
 
 clean:
-	
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
-	#rm -rf *.o *~ core .depend .*.cmd *.ko *.mod.c .tmp_versions
+    rm -rf *.o *.ko *.mod.* *.symvers *.order
 
 test:
 	sudo dmesg -C
